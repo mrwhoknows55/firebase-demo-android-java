@@ -6,6 +6,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -25,6 +26,7 @@ public class HomeActivity extends AppCompatActivity {
         // view initialization
         ImageView userImageView = findViewById(R.id.userIconImgView);
         TextView userNameTextView = findViewById(R.id.userNameTextView);
+        Button btnSignOut = findViewById(R.id.btnSignOut);
 
         // firebase initialization
         FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
@@ -41,10 +43,7 @@ public class HomeActivity extends AppCompatActivity {
             userNameTextView.setText(userName + "\n" + userEmail);
 
             // set profile image
-            Glide.with(this)
-                    .load(imageURL)
-                    .circleCrop()
-                    .into(userImageView);
+            Glide.with(this).load(imageURL).circleCrop().into(userImageView);
         } else {
             Toast.makeText(this, "User not logged in, please login", Toast.LENGTH_SHORT).show();
             Intent loginIntent = new Intent(this, LoginActivity.class);
@@ -52,5 +51,12 @@ public class HomeActivity extends AppCompatActivity {
             finishAfterTransition();
         }
 
+        btnSignOut.setOnClickListener(v -> {
+            firebaseAuth.signOut();
+            Toast.makeText(this, "Logged out successfully!", Toast.LENGTH_SHORT).show();
+            Intent loginIntent = new Intent(this, LoginActivity.class);
+            startActivity(loginIntent);
+            finishAfterTransition();
+        });
     }
 }
