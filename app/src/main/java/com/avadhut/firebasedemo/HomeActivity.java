@@ -27,6 +27,7 @@ public class HomeActivity extends AppCompatActivity {
         ImageView userImageView = findViewById(R.id.userIconImgView);
         TextView userNameTextView = findViewById(R.id.userNameTextView);
         Button btnSignOut = findViewById(R.id.btnSignOut);
+        Button btnBookInfo = findViewById(R.id.btnBookInfo);
 
         // firebase initialization
         FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
@@ -57,6 +58,11 @@ public class HomeActivity extends AppCompatActivity {
             Intent loginIntent = new Intent(this, LoginActivity.class);
             startActivity(loginIntent);
             finishAfterTransition();
+        });
+
+        btnBookInfo.setOnClickListener(v -> {
+            Intent bookIntent = new Intent(this, BooksActivity.class);
+            startActivity(bookIntent);
         });
     }
 }

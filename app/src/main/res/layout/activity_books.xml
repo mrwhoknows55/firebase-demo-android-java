@@ -4,62 +4,63 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomeActivity">
+    tools:context=".BooksActivity">
 
-    <ImageView
-        android:id="@+id/userIconImgView"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:contentDescription="@string/user_profile_image"
-        android:scaleType="centerCrop"
+    <TextView
+        android:id="@+id/books"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/books_list"
+        android:textColor="@color/purple_500"
+        android:textSize="36sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.2"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:layout_constraintVertical_bias="0.05" />
 
     <TextView
-        android:id="@+id/userNameTextView"
+        android:id="@+id/textBooksList"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="24dp"
+        android:layout_marginBottom="8dp"
+        android:padding="8dp"
         android:textColor="@color/black"
-        android:textSize="24sp"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/bookEditText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userIconImgView"
-        tools:text="Avadhut Tanugade" />
+        app:layout_constraintTop_toBottomOf="@+id/books"
+        tools:text="Books List" />
 
-    <Button
-        android:id="@+id/btnSignOut"
+    <EditText
+        android:id="@+id/bookEditText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:paddingVertical="16dp"
-        android:text="@string/sign_out"
-        android:textAllCaps="false"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:layout_marginBottom="8dp"
+        android:background="@null"
+        android:gravity="center"
+        android:hint="@string/add_book_name"
+        android:paddingVertical="12dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnAddBook"
+        app:layout_constraintEnd_toEndOf="@+id/btnAddBook"
+        app:layout_constraintStart_toStartOf="@+id/btnAddBook" />
 
     <Button
-        android:id="@+id/btnBookInfo"
+        android:id="@+id/btnAddBook"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="8dp"
         android:paddingVertical="16dp"
-        android:text="@string/books"
+        android:text="@string/add_book_name"
         android:textAllCaps="false"
         android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/btnSignOut"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
