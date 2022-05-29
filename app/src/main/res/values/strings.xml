@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">FirebaseDemo</string>
+    <string name="welcome">Welcome!</string>
+    <string name="sign_in_with_google">Sign In With Google</string>
+    <string name="loading">Loading</string>
+    <string name="user_profile_image">user profile image</string>
 </resources>
